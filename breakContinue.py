@@ -14,11 +14,17 @@ wynik = 0
 i = 0
 
 while i < 3:
-    x = int(input('Podaj dodatnią liczbe: '))
-    if (x > 0):
+    x = int(input('Podaj dodatnią liczbe parzystą: '))
+    if (x % 2 == 0) and (x > 0):
         wynik += x
-    else:
-        print('Miała być liczba dodatnia !! Sprobuj jeszcze raz')
+    elif (x % 2 == 0) and (x < 0):
+        print('Twoja liczba jest parzysta, ale nie jest dodatnia !! Sprobuj jeszcze raz')
         continue
-    print("Aktualny wynik dodawania to", wynik)
+    elif (x % 2 != 0) and (x > 0):
+        print('Liczba', x, 'nie jest liczbą parzystą !, Sprobuj jeszcze raz')
+        continue
+    else: 
+        print('Liczba', x, 'nie jest ani parzysta ani dodatnia. Na Boga, ogarnij sie i sprobuj jeszcze raz')
+        continue
+    print("Aktualny wynik dodawania liczb parzystych to", wynik)
     i += 1
